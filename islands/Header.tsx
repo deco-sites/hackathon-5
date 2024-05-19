@@ -122,7 +122,7 @@ export default function Header(props: Props) {
   const openSwitcher = useSignal(false);
   const openLanguage = useSignal(false);
 
-  const currentLanguageLink = props.eng.selected ? "/en" : "/pt";
+  const currentLanguageLink = props?.eng?.selected ? "/en" : "/pt";
 
   if (IS_BROWSER) {
     urlPortuguese.value = window.location.pathname.replace("en", "pt");
@@ -384,7 +384,7 @@ export default function Header(props: Props) {
           </li>
         </ul>
         <ul class="hidden lg:flex lg:flex-row h-full group">
-          {props.menuLinks.map((link, index) => {
+          {props?.menuLinks?.map((link, index) => {
             return <MenuLink key={index} {...link} />;
           })}
           <div class="w-[100vw] h-[4px] absolute top-[59px] transition ease-in-out duration-300 left-0 bg-linear-header group-hover:bg-transparent group-hover:bg-none">
@@ -450,7 +450,7 @@ export default function Header(props: Props) {
               : "hidden"}
           >
             <ul class="flex flex-col divide-y divide-semi-white-13">
-              {props.menuLinks.map((link) => {
+              {props?.menuLinks?.map((link) => {
                 return <MobileMenuLink key={link.label} {...link} />;
               })}
             </ul>
@@ -460,23 +460,23 @@ export default function Header(props: Props) {
                   href={urlPortuguese.value}
                   class="block px-6  font-normal text-[16px] leading-[19.36px] text-[#2FD180]"
                 >
-                  {props.pt.label}
+                  {props?.pt?.label}
                 </a>
               </li>
               <li class="h-[50px] grid items-center">
                 <a
-                  href={urlEnglish.value}
+                  href={urlEnglish?.value}
                   class="block px-6  font-normal text-[16px] leading-[19.36px] text-[#2FD180]"
                 >
-                  {props.eng.label}
+                  {props?.eng?.label}
                 </a>
               </li>
               <li class="h-[50px] grid items-center hidden">
                 <a
-                  href={props.sign.url}
+                  href={props?.sign?.url}
                   class="block px-6  font-normal text-[16px] leading-[19.36px] text-[#2FD180]"
                 >
-                  {props.sign.label}
+                  {props?.sign?.label}
                 </a>
               </li>
               {
@@ -537,7 +537,7 @@ export default function Header(props: Props) {
               </li>
               <li class="h-[50px] grid items-center">
                 <a
-                  href={props.discordUrl}
+                  href={props?.discordUrl}
                   target="_blank"
                   class="block px-3  font-normal text-[16px] leading-[19.36px] text-[#2FD180]"
                 >
@@ -563,20 +563,20 @@ export default function Header(props: Props) {
         <ul class="hidden lg:flex lg:flex-row lg:gap-4 px-3">
           <li class="group cursor-pointer md:relative">
             <Dropdown
-              value={props.idiom}
-              open={openLanguage.value}
+              value={props?.idiom}
+              open={openLanguage?.value}
               onClick={handleLanguage}
               variant="rounded"
               items={[
                 {
-                  label: props.pt.label,
-                  href: urlPortuguese.value,
-                  selected: props.pt.selected,
+                  label: props?.pt?.label,
+                  href: urlPortuguese?.value,
+                  selected: props?.pt?.selected,
                 },
                 {
-                  label: props.eng.label,
-                  href: urlEnglish.value,
-                  selected: props.eng.selected,
+                  label: props?.eng?.label,
+                  href: urlEnglish?.value,
+                  selected: props?.eng?.selected,
                 },
               ]}
             />
@@ -593,10 +593,10 @@ export default function Header(props: Props) {
           }
           <li>
             <a
-              href={props.sign.url}
+              href={props?.sign?.url}
               class="block md:hover:bg-[#0A2121] md:hover:border md:hover:text-[#fff] border-[#02F67C] border bg-[#02F67C] font-normal text-[16px] text-[#0A2121] px-3 md:py-1 rounded-full md:transition md:ease-in-out md:duration-300"
             >
-              {props.sign.label}
+              {props?.sign?.label}
             </a>
           </li>
         </ul>

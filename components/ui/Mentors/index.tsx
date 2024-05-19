@@ -1,4 +1,4 @@
-import type { Props as Mentors } from "$store/components/Mentors/ProfileMentor.tsx";
+import type { Props as Mentors } from "$store/components/ui/Mentors/ProfileMentor.tsx";
 import ProfileMentor from "./ProfileMentor.tsx";
 
 export interface Props {
