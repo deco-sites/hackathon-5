@@ -1,4 +1,4 @@
-import Icon from "$store/components/camp/ui/Icon.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Props {
   question: string;
