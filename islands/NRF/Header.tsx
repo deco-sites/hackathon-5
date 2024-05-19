@@ -1,6 +1,6 @@
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
-import { Dropdown } from "site/components/nrf/Dropdown.tsx";
+import { Dropdown } from "site/components/ui/Dropdown2.tsx";
 
 export interface Alert {
   label: string;
