@@ -1,4 +1,4 @@
-import Icon from "../ui/Icon.tsx";
+import Icon from "../Icon.tsx";
 
 /**
  * @titleBy title
